@@ -1,3 +1,4 @@
+//Code testing to commit
 #include <iostream>
 #include "fractionType.h"
 using namespace std;
@@ -16,6 +17,3 @@ int main()
 	system("pause");
     return 0;
 }
-
-
-//Testing deletion and adding of a new comment
