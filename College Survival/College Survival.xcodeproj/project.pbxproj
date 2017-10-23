@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E23EF001F9EB46800092330 /* bkshlf_Backgrd1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E23EEFE1F9EB46800092330 /* bkshlf_Backgrd1.png */; };
+		7E23EF011F9EB46800092330 /* bkshlf_Backgrd_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E23EEFF1F9EB46800092330 /* bkshlf_Backgrd_full.png */; };
 		A0D857EA1F968E3400213B03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D857E91F968E3400213B03 /* AppDelegate.swift */; };
 		A0D857EC1F968E3400213B03 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A0D857EB1F968E3400213B03 /* GameScene.sks */; };
 		A0D857EE1F968E3400213B03 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A0D857ED1F968E3400213B03 /* Actions.sks */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E23EEFE1F9EB46800092330 /* bkshlf_Backgrd1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkshlf_Backgrd1.png; sourceTree = "<group>"; };
+		7E23EEFF1F9EB46800092330 /* bkshlf_Backgrd_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkshlf_Backgrd_full.png; sourceTree = "<group>"; };
 		A0D857E61F968E3400213B03 /* College Survival.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "College Survival.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D857E91F968E3400213B03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0D857EB1F968E3400213B03 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -41,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E23EEFD1F9EB46800092330 /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				7E23EEFE1F9EB46800092330 /* bkshlf_Backgrd1.png */,
+				7E23EEFF1F9EB46800092330 /* bkshlf_Backgrd_full.png */,
+			);
+			path = Background;
+			sourceTree = "<group>";
+		};
 		A0D857DD1F968E3400213B03 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +73,7 @@
 		A0D857E81F968E3400213B03 /* College Survival */ = {
 			isa = PBXGroup;
 			children = (
+				7E23EEFD1F9EB46800092330 /* Background */,
 				A0D857E91F968E3400213B03 /* AppDelegate.swift */,
 				A0D857EB1F968E3400213B03 /* GameScene.sks */,
 				A0D857ED1F968E3400213B03 /* Actions.sks */,
@@ -133,6 +147,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E23EF011F9EB46800092330 /* bkshlf_Backgrd_full.png in Resources */,
+				7E23EF001F9EB46800092330 /* bkshlf_Backgrd1.png in Resources */,
 				A0D857F51F968E3400213B03 /* Main.storyboard in Resources */,
 				A0D857EC1F968E3400213B03 /* GameScene.sks in Resources */,
 				A0D857F71F968E3400213B03 /* Assets.xcassets in Resources */,
