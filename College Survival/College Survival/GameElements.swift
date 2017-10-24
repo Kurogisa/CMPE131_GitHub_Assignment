@@ -13,8 +13,9 @@ extension GameScene
     func createBackground() -> SKNode
     {
         let backgroundNode = SKNode()
-        let spacing = 64 * scaleFactor
+        //let spacing = 64 * scaleFactor
         
+        /*
         for index in 0 ... 19
         {
             let node = SKSpriteNode(imageNamed: String(format: "bkshlf_Backgrd_full", index + 1))
@@ -24,6 +25,10 @@ extension GameScene
             
             backgroundNode.addChild(node)
         }
+        */
+        let node = SKSpriteNode(imageNamed: String(format: "bkshlf_Backgrd_full"))
+        node.anchorPoint = CGPoint(x: -0.005, y: 0)
+        backgroundNode.addChild(node)
         return backgroundNode
     }
 }
