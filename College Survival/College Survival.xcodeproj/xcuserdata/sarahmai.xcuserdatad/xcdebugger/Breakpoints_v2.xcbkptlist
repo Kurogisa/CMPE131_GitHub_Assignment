@@ -22,7 +22,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "College Survival/GameElements.swift"
@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
             endingLineNumber = "132"
-            landmarkName = "createEssayAtPosition(position:ofType:)"
+            landmarkName = "createEssayPageAtPosition(position:ofType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
