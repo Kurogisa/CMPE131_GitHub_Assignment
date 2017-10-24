@@ -69,12 +69,12 @@ extension GameScene
     func createPlayer() -> SKNode
     {
         let playerNode = SKNode()
-        playerNode.position = CGPoint(x: self.size.width/2, y: 80)
+        playerNode.position = CGPoint(x: self.size.width/2, y: 100)
         
-        let sprite = SKSpriteNode(imageNamed: "Chara")
+        let sprite = SKSpriteNode(imageNamed: "Chara_smaller")
         playerNode.addChild(sprite)
         
-        playerNode.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width / 2)
+        playerNode.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width/2)
         
         playerNode.physicsBody?.isDynamic = false
         playerNode.physicsBody?.allowsRotation = false
