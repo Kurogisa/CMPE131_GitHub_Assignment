@@ -70,17 +70,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         motionManager.accelerometerUpdateInterval = 0.2
         
-        motionManager.startAccelerometerUpdatesToQueue(NSOperationQuere.currentQueue()!) {data:CMAccelerometerData?, error:NSError?)-> Void in
-            if let accelerometerData = Data {
+        motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.currentQueue()!) { (data:CMAccelerometerData?, error:NSError?)-> Void in
+            if let accelerometerData = Data
+            {
                 let acceleration = accelerometerData.acceleration
                 self.xAcceleration = (CGFloat(acceleration.x)*0.75 + (self.xAcceleration * 0.25))
             }
-    }
-    func didBeginConcat(contact:SKPhysicsContactDelegate) {
+        }
+        
+    func didBeginConcat(contact:SKPhysicsContactDelegate)
+    {
         var otherNode:SKNode!
         
-        if
-            contact.bodyA.node != player {
+        if contact.bodyA.node != player
+        {
             otherNode = contact.bodyA.node
         }
         else
@@ -90,11 +93,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         (otherNode as! GenericNode).collisionWithPlayer(player)
     }
         
-        override func didSimulatePhysics(){
+        override func didSimulatePhysics()
+        {
             player.physicsBody?.velocity = CGVector(dx: xAcceleration * 400, dy: player.physicsBody!.velocity.dy)
-            if player.position.x < -20 {
+            if player.position.x < -20
+            {
                 player.position = CGPoint(x: self.size.width + 20, y: player.position.y)
-            } else if (player.position.x > self.size.width + 20){
+            }
+            else if (player.position.x > self.size.width + 20)
+            {
                 player.position = CGPoint (x: -20, y: player.position.y)
             }
         }
