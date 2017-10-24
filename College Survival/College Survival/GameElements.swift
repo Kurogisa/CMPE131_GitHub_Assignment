@@ -96,6 +96,17 @@ extension GameScene
     
     func createPlatformPosition (position:CGPoint, ofType type:PlatformType) -> PlatformNode
     {
+        let node = PlatformNode()
+        let position = CGPoint(x: position.x * scaleFactor, y: position.y)
+        node.position = position
+        node.name = "PLATFORMNODE"
+        node.platformType = type
         
+        var sprite:SKSpriteNode
+        
+        if type == PlatformType.normalBrick
+        {
+            spite = SKSpriteNode(imageNamed: ")//39:29
+        }
     }
 }

@@ -6,8 +6,9 @@
 //  Copyright © 2017 kenny ou. All rights reserved.
 //
 
-import UIKit
+import SpriteKit
 
-class PlatformNode: NSObject {
-
+class PlatformNode: GenericNode
+{
+    var platformType:PlatformType!
 }
