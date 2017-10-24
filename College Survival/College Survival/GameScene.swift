@@ -80,7 +80,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }*/
     }
     
-    func didBeginConcat(contact:SKPhysicsContactDelegate)
+    func didBeginConcat(contact:SKPhysicsContact)
     {
         var otherNode:SKNode!
         
@@ -92,7 +92,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         {
             otherNode = contact.bodyB.node
         }
-        (otherNode as! GenericNode).collisionWithPlayer(player)
+        
+        (otherNode as! GenericNode).collisionWithPlayer(player: player)
+        
     }
         /*
         override func didSimulatePhysics()
@@ -112,7 +114,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     {
         
         player.physicsBody?.isDynamic = true
-        player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 20))
+        player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 30))
 
     }
     
