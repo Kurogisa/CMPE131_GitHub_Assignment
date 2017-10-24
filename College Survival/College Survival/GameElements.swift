@@ -106,11 +106,11 @@ extension GameScene
         
         if type == PlatformType.normalBrick
         {
-            sprite = SKSpriteNode(imageNamed: "closedBook_obj1")//stays solid
+            sprite = SKSpriteNode(imageNamed: "closedBook_obj1")//should stays solid after stepped on
         }
         else
         {
-            sprite = SKSpriteNode(imageNamed: "old_book") // disapears after on step
+            sprite = SKSpriteNode(imageNamed: "old_book") // should disapears after stepped on
         }
         
         node.addChild(sprite)
