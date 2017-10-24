@@ -11,6 +11,7 @@
 		7E23EF011F9EB46800092330 /* bkshlf_Backgrd_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E23EEFF1F9EB46800092330 /* bkshlf_Backgrd_full.png */; };
 		7E23EF031F9EC98400092330 /* GameElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E23EF021F9EC98400092330 /* GameElements.swift */; };
 		7E23EF051F9EE08500092330 /* GenericNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E23EF041F9EE08500092330 /* GenericNode.swift */; };
+		7EDAE3A61F9F02A70004AEDB /* PlatformNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDAE3A51F9F02A70004AEDB /* PlatformNode.swift */; };
 		A0D857EA1F968E3400213B03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D857E91F968E3400213B03 /* AppDelegate.swift */; };
 		A0D857EC1F968E3400213B03 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A0D857EB1F968E3400213B03 /* GameScene.sks */; };
 		A0D857EE1F968E3400213B03 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A0D857ED1F968E3400213B03 /* Actions.sks */; };
@@ -26,6 +27,7 @@
 		7E23EEFF1F9EB46800092330 /* bkshlf_Backgrd_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkshlf_Backgrd_full.png; sourceTree = "<group>"; };
 		7E23EF021F9EC98400092330 /* GameElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameElements.swift; sourceTree = "<group>"; };
 		7E23EF041F9EE08500092330 /* GenericNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericNode.swift; sourceTree = "<group>"; };
+		7EDAE3A51F9F02A70004AEDB /* PlatformNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformNode.swift; sourceTree = "<group>"; };
 		A0D857E61F968E3400213B03 /* College Survival.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "College Survival.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D857E91F968E3400213B03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0D857EB1F968E3400213B03 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				A0D857EF1F968E3400213B03 /* GameScene.swift */,
 				7E23EF021F9EC98400092330 /* GameElements.swift */,
 				7E23EF041F9EE08500092330 /* GenericNode.swift */,
+				7EDAE3A51F9F02A70004AEDB /* PlatformNode.swift */,
 				A0D857F11F968E3400213B03 /* GameViewController.swift */,
 				A0D857F31F968E3400213B03 /* Main.storyboard */,
 				A0D857F61F968E3400213B03 /* Assets.xcassets */,
@@ -174,6 +177,7 @@
 				A0D857F01F968E3400213B03 /* GameScene.swift in Sources */,
 				A0D857F21F968E3400213B03 /* GameViewController.swift in Sources */,
 				7E23EF051F9EE08500092330 /* GenericNode.swift in Sources */,
+				7EDAE3A61F9F02A70004AEDB /* PlatformNode.swift in Sources */,
 				A0D857EA1F968E3400213B03 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -76,7 +76,7 @@ extension GameScene
         
         playerNode.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width/2)
         
-        playerNode.physicsBody?.isDynamic = false
+        playerNode.physicsBody?.isDynamic = true
         playerNode.physicsBody?.allowsRotation = false
         
         playerNode.physicsBody?.restitution = 1
@@ -92,5 +92,10 @@ extension GameScene
         playerNode.physicsBody?.contactTestBitMask = CollisionBitMask.Flower | CollisionBitMask.Brick
         
         return playerNode
+    }
+    
+    func createPlatformPosition (position:CGPoint, ofType type:PlatformType) -> PlatformNode
+    {
+        
     }
 }
