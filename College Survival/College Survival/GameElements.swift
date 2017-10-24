@@ -76,7 +76,7 @@ extension GameScene
         
         playerNode.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width/2)
         
-        playerNode.physicsBody?.isDynamic = true
+        playerNode.physicsBody?.isDynamic = false
         playerNode.physicsBody?.allowsRotation = false
         
         playerNode.physicsBody?.restitution = 1
@@ -106,7 +106,20 @@ extension GameScene
         
         if type == PlatformType.normalBrick
         {
-            spite = SKSpriteNode(imageNamed: ")//39:29
+            sprite = SKSpriteNode(imageNamed: "closedBook_obj1")//stays solid
         }
+        else
+        {
+            sprite = SKSpriteNode(imageNamed: "old_book") // disapears after on step
+        }
+        
+        node.addChild(sprite)
+        
+        node.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
+        node.physicsBody?.isDynamic = false
+        node.physicsBody?.categoryBitMask = CollisionBitMask.Brick
+        node.physicsBody?.contactTestBitMask = 0
+        
+        return node
     }
 }
