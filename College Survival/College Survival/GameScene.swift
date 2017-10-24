@@ -60,7 +60,7 @@ class GameScene: SKScene
         player = createPlayer()
         foreground.addChild(player)
         
-        let platform = createPlatformPosition(position: CGPoint(x:160, y:320), ofType: PlatformType.normalBrick)
+        let platform = createPlatformAtPosition(position: CGPoint(x:160, y:320), ofType: PlatformType.normalBrick)
         foreground.addChild(platform)
     }
     

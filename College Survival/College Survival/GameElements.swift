@@ -94,7 +94,7 @@ extension GameScene
         return playerNode
     }
     
-    func createPlatformPosition (position:CGPoint, ofType type:PlatformType) -> PlatformNode
+    func createPlatformAtPosition (position:CGPoint, ofType type:PlatformType) -> PlatformNode
     {
         let node = PlatformNode()
         let position = CGPoint(x: position.x * scaleFactor, y: position.y)
@@ -122,4 +122,34 @@ extension GameScene
         
         return node
     }
+    
+    func createEssayAtPosition (position:CGPoint, ofType type:EssayType) -> EssayPageNode
+    {
+        let node = EssayPageNode()
+        let position = CGPoint(x: position.x * scaleFactor, y: position.y)
+        node.position = position
+        node.name = "ESSAYPAGENODE"
+        node.EssayType = type
+        
+        var sprite:SKSpriteNode
+        
+        if type == EssayType.normalPage
+        {
+            sprite = SKSpriteNode(imageNamed: "essayPg_obj1")
+        }
+        else
+        {
+            sprite = SKSpriteNode(imageNamed: "old_book") // disapears after on step
+        }
+        
+        node.addChild(sprite)
+        
+        node.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
+        node.physicsBody?.isDynamic = false
+        node.physicsBody?.categoryBitMask = CollisionBitMask.Brick
+        node.physicsBody?.contactTestBitMask = 0
+        
+        return node
+    }
+
 }
