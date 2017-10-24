@@ -118,7 +118,7 @@ extension GameScene
         node.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
         node.physicsBody?.isDynamic = false
         node.physicsBody?.categoryBitMask = CollisionBitMask.Brick
-        node.physicsBody?.contactTestBitMask = 0
+        node.physicsBody?.collisionBitMask = 0
         
         return node
     }
@@ -147,7 +147,7 @@ extension GameScene
         node.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
         node.physicsBody?.isDynamic = false
         node.physicsBody?.categoryBitMask = CollisionBitMask.Brick
-        node.physicsBody?.contactTestBitMask = 0
+        node.physicsBody?.collisionBitMask = 0
         
         return node
     }

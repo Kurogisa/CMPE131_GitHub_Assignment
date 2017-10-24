@@ -10,8 +10,8 @@ import SpriteKit
 import GameplayKit
 import CoreMotion
 
-class GameScene: SKScene
-{
+class GameScene: SKScene, SKPhysicsContactDelegate {
+
     var background:SKNode!
     var midground:SKNode!
     var foreground:SKNode!
@@ -25,7 +25,7 @@ class GameScene: SKScene
     var startButton = SKSpriteNode(imageNamed: "level_icon")//game start button
     var endofGamePosition = 0
     
-    let montionManager = CMMotionManager()
+    let motionManager = CMMotionManager()
     
     var xAcceleration:CGFloat = 0.0
     
@@ -64,8 +64,41 @@ class GameScene: SKScene
         foreground.addChild(platform)
         let EssayPage = createEssayPageAtPosition(position: CGPoint(x: 160, y: 220),ofType: EssayPageType.NormalEssayPage)
         foreground.addChild(EssayPage)
-
+        
+        physicsWorld.gravity = CGVector(dx: 0, dy: -2)
+        physicsWorld.contactDelegate = self
+        
+        motionManager.accelerometerUpdateInterval = 0.2
+        
+        motionManager.startAccelerometerUpdatesToQueue(NSOperationQuere.currentQueue()!) {data:CMAccelerometerData?, error:NSError?)-> Void in
+            if let accelerometerData = Data {
+                let acceleration = accelerometerData.acceleration
+                self.xAcceleration = (CGFloat(acceleration.x)*0.75 + (self.xAcceleration * 0.25))
+            }
     }
+    func didBeginConcat(contact:SKPhysicsContactDelegate) {
+        var otherNode:SKNode!
+        
+        if
+            contact.bodyA.node != player {
+            otherNode = contact.bodyA.node
+        }
+        else
+        {
+            otherNode = contact.bodyB.node
+        }
+        (otherNode as! GenericNode).collisionWithPlayer(player)
+    }
+        
+        override func didSimulatePhysics(){
+            player.physicsBody?.velocity = CGVector(dx: xAcceleration * 400, dy: player.physicsBody!.velocity.dy)
+            if player.position.x < -20 {
+                player.position = CGPoint(x: self.size.width + 20, y: player.position.y)
+            } else if (player.position.x > self.size.width + 20){
+                player.position = CGPoint (x: -20, y: player.position.y)
+            }
+        }
+        }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
@@ -80,3 +113,4 @@ class GameScene: SKScene
         // Called before each frame is rendered
     }
 }
+
