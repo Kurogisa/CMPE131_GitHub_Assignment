@@ -139,7 +139,7 @@ extension GameScene
         }
         else
         {
-            sprite = SKSpriteNode(imageNamed: "old_book") // disapears after on step
+            sprite = SKSpriteNode(imageNamed: "old_book")
         }
         
         node.addChild(sprite)
