@@ -113,7 +113,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     {
         
         player.physicsBody?.isDynamic = true
-        player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 100))
+        player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 40))
 
     }
     
