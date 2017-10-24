@@ -123,17 +123,17 @@ extension GameScene
         return node
     }
     
-    func createEssayAtPosition (position:CGPoint, ofType type:EssayType) -> EssayPageNode
+    func createEssayPageAtPosition (position:CGPoint, ofType type:EssayPageType) -> EssayPageNode
     {
         let node = EssayPageNode()
         let position = CGPoint(x: position.x * scaleFactor, y: position.y)
         node.position = position
         node.name = "ESSAYPAGENODE"
-        node.EssayType = type
+        node.EssayPageType = type
         
         var sprite:SKSpriteNode
         
-        if type == EssayType.normalPage
+        if type == EssayPageType.NormalEssayPage
         {
             sprite = SKSpriteNode(imageNamed: "essayPg_obj1")
         }

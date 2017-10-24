@@ -8,12 +8,13 @@
 
 import SpriteKit
 
-enum EssayType:Int
+enum EssayPageType:Int
 {
-    case normalPage = 0
+    case NormalEssayPage = 0
+    case SpecialEssayPage = 1
 }
 
 class EssayPageNode: GenericNode
 {
-    var essayType:EssayType!
+    var EssayPageType:EssayPageType!
 }
