@@ -69,9 +69,9 @@ class GameScene: SKScene
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
-        /*
+        
         player.physicsBody?.isDynamic = true
-        player.physicsBody?.applyImpulse(<#T##impulse: CGVector##CGVector#>(dx:0, dy:20))*/
+        player.physicsBody?.applyImpulse(CGVector(dx:0, dy:20))
     }
     
         override func update(_ currentTime: TimeInterval)
