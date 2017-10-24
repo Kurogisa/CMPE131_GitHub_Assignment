@@ -62,10 +62,14 @@ class GameScene: SKScene
         
         let platform = createPlatformAtPosition(position: CGPoint(x:160, y:320), ofType: PlatformType.normalBrick)
         foreground.addChild(platform)
+        let EssayPage = createEssayPageAtPosition(position: <#T##CGPoint#>, ofType: <#T##EssayPageType#>.SpecialEssayPage)
+        foreground.addChild(EssayPage)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
+        player.physicsBody?.isDynamic = true
+        player.physicsBody?.applyImpulse(<#T##impulse: CGVector##CGVector#>(dx:0, dy:20))
     }
     
         override func update(_ currentTime: TimeInterval)
