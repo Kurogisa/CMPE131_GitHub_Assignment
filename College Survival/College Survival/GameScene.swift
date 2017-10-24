@@ -92,7 +92,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         {
             otherNode = contact.bodyB.node
         }
-        
         (otherNode as! GenericNode).collisionWithPlayer(player: player)
         
     }
@@ -114,7 +113,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     {
         
         player.physicsBody?.isDynamic = true
-        player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 40))
+        player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 100))
 
     }
     
