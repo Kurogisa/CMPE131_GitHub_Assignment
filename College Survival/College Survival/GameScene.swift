@@ -70,14 +70,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         motionManager.accelerometerUpdateInterval = 0.2
         
+        /*
         motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.currentQueue()!) { (data:CMAccelerometerData?, error:NSError?)-> Void in
             if let accelerometerData = Data
             {
                 let acceleration = accelerometerData.acceleration
                 self.xAcceleration = (CGFloat(acceleration.x)*0.75 + (self.xAcceleration * 0.25))
             }
-        }
-        
+        }*/
+    }
+    
     func didBeginConcat(contact:SKPhysicsContactDelegate)
     {
         var otherNode:SKNode!
@@ -92,7 +94,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         (otherNode as! GenericNode).collisionWithPlayer(player)
     }
-        
+        /*
         override func didSimulatePhysics()
         {
             player.physicsBody?.velocity = CGVector(dx: xAcceleration * 400, dy: player.physicsBody!.velocity.dy)
@@ -104,8 +106,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             {
                 player.position = CGPoint (x: -20, y: player.position.y)
             }
-        }
-        }
+        }*/
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
