@@ -44,6 +44,12 @@ class GameScene: SKScene
     {
         super.init(size: size)
         backgroundColor = SKColor.white
+        
+        scaleFactor = self.size.width / 320
+        
+        background = createBackground()
+        addChild(background)
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
