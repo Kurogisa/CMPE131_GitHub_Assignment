@@ -32,7 +32,7 @@ extension GameScene
         return backgroundNode
     }
     
-    func createMidground() -> SKNode
+    /*func createMidground() -> SKNode
     {
         let midgroundNode = SKNode()
         var anchor:CGPoint!
@@ -42,7 +42,7 @@ extension GameScene
         {
             var name:String
             
-            let randomNumber = arc4random()%2
+            let randomNumber = arc4random() % 2
             
             if randomNumber > 0
             {
@@ -64,7 +64,7 @@ extension GameScene
             midgroundNode.addChild(cloudNode)
         }
         return midgroundNode
-    }
+    }*/
     
     func createPlayer() -> SKNode
     {
@@ -73,6 +73,8 @@ extension GameScene
         
         let sprite = SKSpriteNode(imageNamed: "Chara")
         playerNode.addChild(sprite)
+        
+        playerNode.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width / 2)
         
         playerNode.physicsBody?.isDynamic = false
         playerNode.physicsBody?.allowsRotation = false

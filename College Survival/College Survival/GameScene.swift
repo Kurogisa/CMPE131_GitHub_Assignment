@@ -22,7 +22,7 @@ class GameScene: SKScene
     
     var scaleFactor:CGFloat!
     
-    var startButton = SKSpriteNode(imageNamed: "TapToStart")//game start button
+    var startButton = SKSpriteNode(imageNamed: "level_icon")//game start button
     var endofGamePosition = 0
     
     let montionManager = CMMotionManager()
@@ -51,8 +51,8 @@ class GameScene: SKScene
         background = createBackground()
         addChild(background)
         
-        background = createMidground()
-        addChild(midground)
+        /*background = createMidground()
+        addChild(midground)*/
         
         foreground = SKNode()
         addChild(foreground)
