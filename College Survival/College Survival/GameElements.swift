@@ -14,7 +14,7 @@ extension GameScene
     {
         let backgroundNode = SKNode()
         //let spacing = 64 * scaleFactor
-        
+        //scaling is not needed ... maybe?
         /*
         for index in 0 ... 19
         {
@@ -32,6 +32,7 @@ extension GameScene
         return backgroundNode
     }
     
+    //midground not need for our design
     /*func createMidground() -> SKNode
     {
         let midgroundNode = SKNode()

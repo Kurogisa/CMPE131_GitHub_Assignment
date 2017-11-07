@@ -16,7 +16,7 @@ class PlatformNode: GenericNode
     {
         //ERROR #1 
         //error that prevents the book from being landed on!!!!
-        if player.physicsBody?.velocity.dy < 0
+        if CGFloat((player.physicsBody?.velocity.dy)!) < 0
         {
             player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 250)
             
