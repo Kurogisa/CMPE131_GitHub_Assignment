@@ -11,9 +11,10 @@ import SpriteKit
 class PlatformNode: GenericNode
 {
     var platformType:PlatformType!
+    
     override func collisionWithPlayer(player: SKNode) -> Bool
     {
-        if CGFloat((player.physicsBody?.velocity.dy)!) < 0
+        if player.physicsBody?.velocity.dy < 0
         {
             player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 250)
             

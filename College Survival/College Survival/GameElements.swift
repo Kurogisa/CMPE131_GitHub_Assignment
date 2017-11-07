@@ -144,9 +144,9 @@ extension GameScene
         
         node.addChild(sprite)
         
-        node.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
+        node.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width/2)
         node.physicsBody?.isDynamic = false
-        node.physicsBody?.categoryBitMask = CollisionBitMask.Brick
+        node.physicsBody?.categoryBitMask = CollisionBitMask.Flower
         node.physicsBody?.collisionBitMask = 0
         
         return node

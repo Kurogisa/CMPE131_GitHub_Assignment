@@ -26,6 +26,7 @@ class GenericNode: SKNode
     {
         return false
     }
+    
     func shouldRemoveNode (playerY:CGFloat)
     {
         if playerY>self.position.y + 300
