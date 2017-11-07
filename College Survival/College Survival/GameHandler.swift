@@ -36,7 +36,13 @@ class GameHandler
         highScore = userDefaults.integerForKey("highScore")
         flowers = userDefaults.integerForKey("flowers")
         
-        if let path = NSbundle.mainBundle().pathForResources("Level01") //1:04:38
+        if let path = NSbundle.mainBundle().pathForResources("Level01", ofType: "plist")
+        {
+            if let level = NSDictionary(contentsOfFile: path)
+            {
+                levelData = level
+            }
+        }
         
     }
     
