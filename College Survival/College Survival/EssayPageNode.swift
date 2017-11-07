@@ -16,7 +16,7 @@ enum EssayPageType:Int
 
 class EssayPageNode: GenericNode
 {
-    var EssayPageType:EssayPageType!
+    var essayPageType:EssayPageType!
     
     override func collisionWithPlayer(player: SKNode) -> Bool
     {

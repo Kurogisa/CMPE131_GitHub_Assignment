@@ -51,12 +51,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         background = createBackground()
         addChild(background)
         
+        //our app does not have a mid ground
         /*background = createMidground()
         addChild(midground)*/
         
         foreground = SKNode()
         addChild(foreground)
         
+        //created our player
         player = createPlayer()
         foreground.addChild(player)
         
@@ -69,16 +71,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = CGVector(dx: 0, dy: -2)
         physicsWorld.contactDelegate = self
         
+        /*_________________starting to add after problem_(video = 53:30)_______________________*/
+
         motionManager.accelerometerUpdateInterval = 0.2
         
-        /*
-        motionManager.startAccelerometerUpdatesToQueue(OperationQueue.currentQueue()!) { (data:CMAccelerometerData?, error:NSError?)-> Void in
+        //ERROR #2
+        motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.currentQueue())
+        {
+            (data: CMAccelerometerData?, error:NSError?)-> Void in
             if let accelerometerData = Data
             {
                 let acceleration = accelerometerData.acceleration
                 self.xAcceleration = (CGFloat(acceleration.x)*0.75 + (self.xAcceleration * 0.25))
             }
-        }*/
+        }
+        /*_________________starting to add after problem_(video = 53:30)_______________________*/
     }
     
     func didBeginConcat(contact:SKPhysicsContact)
@@ -96,7 +103,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         (otherNode as! GenericNode).collisionWithPlayer(player: player)
         
     }
-        /*
+    /*_________________starting to add after problem_(video = 55:48)_______________________*/
+    
         override func didSimulatePhysics()
         {
             player.physicsBody?.velocity = CGVector(dx: xAcceleration * 400, dy: player.physicsBody!.velocity.dy)
@@ -108,12 +116,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             {
                 player.position = CGPoint (x: -20, y: player.position.y)
             }
-        }*/
+        }
+    /*_________________starting to add after problem_(video = 55:48)_______________________*/
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
         
         player.physicsBody?.isDynamic = true
+        
         player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 40))
 
     }

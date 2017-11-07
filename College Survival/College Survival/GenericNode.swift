@@ -24,7 +24,7 @@ class GenericNode: SKNode
 {
     func collisionWithPlayer (player:SKNode)->Bool
     {
-        return false
+        return false //for now
     }
     
     func shouldRemoveNode (playerY:CGFloat)

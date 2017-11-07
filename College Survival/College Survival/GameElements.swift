@@ -76,7 +76,7 @@ extension GameScene
         
         playerNode.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width/2)
         
-        playerNode.physicsBody?.isDynamic = false
+        playerNode.physicsBody?.isDynamic = false //true
         playerNode.physicsBody?.allowsRotation = false
         
         playerNode.physicsBody?.restitution = 1
@@ -116,7 +116,7 @@ extension GameScene
         node.addChild(sprite)
         
         node.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
-        node.physicsBody?.isDynamic = false
+        node.physicsBody?.isDynamic = false //so it does not react to gravity and fall
         node.physicsBody?.categoryBitMask = CollisionBitMask.Brick
         node.physicsBody?.collisionBitMask = 0
         
@@ -129,7 +129,7 @@ extension GameScene
         let position = CGPoint(x: position.x * scaleFactor, y: position.y)
         node.position = position
         node.name = "ESSAYPAGENODE"
-        node.EssayPageType = type
+        node.essayPageType = type
         
         var sprite:SKSpriteNode
         
