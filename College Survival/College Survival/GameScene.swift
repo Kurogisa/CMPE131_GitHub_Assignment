@@ -48,6 +48,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         scaleFactor = self.size.width / 320
         
+        /*_________________starting to add after problem_(video = 1:03:30)_____________________*/
+        let levelData = GameHandler.sharedInstance.levelData
+        /*_________________starting to add after problem_(video = 1:03:30)_____________________*/
+        
+        
         background = createBackground()
         addChild(background)
         
@@ -62,8 +67,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player = createPlayer()
         foreground.addChild(player)
         
-        let platform = createPlatformAtPosition(position: CGPoint(x:160, y:320), ofType: PlatformType.normalBrick)
-        foreground.addChild(platform)
+        /*_________________starting to add after problem_(video = 1:05:47)_____________________*/
+        //errased and replaced in (1:05:47)
+        //let platform = createPlatformAtPosition(position: CGPoint(x:160, y:320), ofType: PlatformType.normalBrick)
+        //foreground.addChild(platform)
+        let platforms = levelData["Platforms"] as! NSDictionary
+        let platformPatterns = platforms["Patterns"] as! NSDictionary
+        let platformPositions = platform
+        
+        for platformPositions in platformPositions
+        {
+            let x = platformPosition["x"]?.flo
+            //go to video part (1:12:13) HERE!!!!!!!!!
+        }
+        /*_________________starting to add after problem_(video = 1:05:47)_____________________*/
+
         
         let EssayPage = createEssayPageAtPosition(position: CGPoint(x: 160, y: 220),ofType: EssayPageType.NormalEssayPage)
         foreground.addChild(EssayPage)
@@ -72,7 +90,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         
         /*_________________starting to add after problem_(video = 53:30)_______________________*/
-
         motionManager.accelerometerUpdateInterval = 0.2
         
         //ERROR #2
