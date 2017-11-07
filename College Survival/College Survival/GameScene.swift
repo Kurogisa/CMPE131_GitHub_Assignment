@@ -73,12 +73,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //foreground.addChild(platform)
         let platforms = levelData["Platforms"] as! NSDictionary
         let platformPatterns = platforms["Patterns"] as! NSDictionary
-        let platformPositions = platform
+        let platformPositions = platforms ["Position"] as! [NSDictionary]
         
         for platformPositions in platformPositions
         {
-            let x = platformPosition["x"]?.flo
-            //go to video part (1:12:13) HERE!!!!!!!!!
+            let x = platformPosition["x"]?.floatValue
+            let y = PlatformPosition["y"]?.floatValue
+            let pattern = platformPosition["pattern"] as! NSString
+            
+            let platformPattern = platformPattern[pattern] as! [NSDictionary]
+            for platformPoint in platformPattern
+            {
+                let xValue = platformPoint["x"]?.floatValue
+                let yValue = platformPoint["y"]?.floatValue
+                let type = PlatformType[rawValue: platformPoint["type"]!.integerValue]
+                let xPosition = CGFloat[xValue! + x!]
+                let yPosition = CGFloat[yValue! + y!]
+                
+                let platformNode = createPlatformAtPosition(CGPoint(x: xPosition, y: yPosition),ofType: type!)
+                foreground.addChild(platformNode)
+            }
+            //go to video part (1:12:02) HERE!!!!!!!!!
         }
         /*_________________starting to add after problem_(video = 1:05:47)_____________________*/
 
