@@ -14,13 +14,11 @@ class PlatformNode: GenericNode
     
     override func collisionWithPlayer(player: SKNode) -> Bool
     {
-        //ERROR #1 
-        //error that prevents the book from being landed on!!!!
         if CGFloat((player.physicsBody?.velocity.dy)!) < 0
         {
-            player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 250)
+            player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 400)
             
-            if platformType == PlatformType.breakableBrick
+            if platformType == PlatformType.breakableBook
             {
                 self.removeFromParent()
             }

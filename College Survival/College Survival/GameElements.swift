@@ -10,9 +10,10 @@ import SpriteKit
 
 extension GameScene
 {
-    func createBackground() -> SKNode
+    func createBackgroundNode() -> SKNode
     {
         let backgroundNode = SKNode()
+        //If our background came in parts
         //let spacing = 64 * scaleFactor
         //scaling is not needed ... maybe?
         /*
@@ -60,7 +61,7 @@ extension GameScene
             
             let cloudNode = SKSpriteNode(imageNamed: name)
             cloudNode.anchorPoint = anchor
-            cloudNode.position = CGPoint(x: xPos, y: 500*CGFloat(index))
+            cloudNode.position = CGPoint(x: xPos, y: 500 * CGFloat(index))
             
             midgroundNode.addChild(cloudNode)
         }
@@ -70,27 +71,25 @@ extension GameScene
     func createPlayer() -> SKNode
     {
         let playerNode = SKNode()
-        playerNode.position = CGPoint(x: self.size.width/2, y: 100)
+        playerNode.position = CGPoint(x: self.size.width/2, y: 80)
         
         let sprite = SKSpriteNode(imageNamed: "Chara_smaller")
         playerNode.addChild(sprite)
         
         playerNode.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width/2)
         
-        playerNode.physicsBody?.isDynamic = false //true
+        playerNode.physicsBody?.isDynamic = false
         playerNode.physicsBody?.allowsRotation = false
         
         playerNode.physicsBody?.restitution = 1
         playerNode.physicsBody?.friction = 0
         playerNode.physicsBody?.angularDamping = 0
         playerNode.physicsBody?.linearDamping = 0
-        
+       
         playerNode.physicsBody?.usesPreciseCollisionDetection = true
-        
-        playerNode.physicsBody?.categoryBitMask = CollisionBitMask.Player
-        
+        playerNode.physicsBody?.categoryBitMask = CollisionCategoryBitmask.Player
         playerNode.physicsBody?.collisionBitMask = 0
-        playerNode.physicsBody?.contactTestBitMask = CollisionBitMask.Flower | CollisionBitMask.Brick
+        playerNode.physicsBody?.contactTestBitMask = CollisionCategoryBitmask.EssayPage | CollisionCategoryBitmask.Book
         
         return playerNode
     }
@@ -98,14 +97,13 @@ extension GameScene
     func createPlatformAtPosition (position:CGPoint, ofType type:PlatformType) -> PlatformNode
     {
         let node = PlatformNode()
-        let position = CGPoint(x: position.x * scaleFactor, y: position.y)
-        node.position = position
+        let thePosition = CGPoint(x: position.x * scaleFactor, y: position.y)
+        node.position = thePosition
         node.name = "PLATFORMNODE"
         node.platformType = type
         
         var sprite:SKSpriteNode
-        
-        if type == PlatformType.normalBrick
+        if type == PlatformType.normalBook
         {
             sprite = SKSpriteNode(imageNamed: "closedBook_obj1")//should stays solid after stepped on
         }
@@ -113,41 +111,42 @@ extension GameScene
         {
             sprite = SKSpriteNode(imageNamed: "old_book") // should disapears after stepped on
         }
-        
         node.addChild(sprite)
         
         node.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
         node.physicsBody?.isDynamic = false //so it does not react to gravity and fall
-        node.physicsBody?.categoryBitMask = CollisionBitMask.Brick
+        node.physicsBody?.categoryBitMask = CollisionCategoryBitmask.Book
         node.physicsBody?.collisionBitMask = 0
         
         return node
     }
     
-    func createEssayPageAtPosition (position:CGPoint, ofType type:EssayPageType) -> EssayPageNode
+    func createEssayPageAtPosition (position: CGPoint/*, ofType type:EssayPageType*/) -> EssayPageNode
     {
         let node = EssayPageNode()
-        let position = CGPoint(x: position.x * scaleFactor, y: position.y)
-        node.position = position
+        let thePosition = CGPoint(x: position.x * scaleFactor, y: position.y)
+        node.position = thePosition
         node.name = "ESSAYPAGENODE"
-        node.essayPageType = type
+        //node.essayPageType = type
         
-        var sprite:SKSpriteNode
+        var sprite: SKSpriteNode
+        sprite = SKSpriteNode(imageNamed: "essayPg_obj1")
         
-        if type == EssayPageType.NormalEssayPage
+        //If we have two types of essay pages
+        /*if type == EssayPageType.NormalEssayPage
         {
             sprite = SKSpriteNode(imageNamed: "essayPg_obj1")
         }
         else
         {
-            sprite = SKSpriteNode(imageNamed: "old_book")
-        }
+            sprite = SKSpriteNode(imageNamed: "essayPg_obj2")
+        }*/
         
         node.addChild(sprite)
         
         node.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width/2)
         node.physicsBody?.isDynamic = false
-        node.physicsBody?.categoryBitMask = CollisionBitMask.Flower
+        node.physicsBody?.categoryBitMask = CollisionCategoryBitmask.EssayPage
         node.physicsBody?.collisionBitMask = 0
         
         return node

@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		156942921FB464750059FF82 /* EndGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156942911FB464750059FF82 /* EndGame.swift */; };
+		15F49AF11FB525D9007484BE /* College_SurvivalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F49AF01FB525D9007484BE /* College_SurvivalTests.swift */; };
 		7E23EF001F9EB46800092330 /* bkshlf_Backgrd1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E23EEFE1F9EB46800092330 /* bkshlf_Backgrd1.png */; };
 		7E23EF011F9EB46800092330 /* bkshlf_Backgrd_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E23EEFF1F9EB46800092330 /* bkshlf_Backgrd_full.png */; };
 		7E23EF031F9EC98400092330 /* GameElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E23EF021F9EC98400092330 /* GameElements.swift */; };
 		7E23EF051F9EE08500092330 /* GenericNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E23EF041F9EE08500092330 /* GenericNode.swift */; };
 		7E5D49BC1FB143C300BBEC33 /* GameHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5D49BB1FB143C300BBEC33 /* GameHandler.swift */; };
 		7E5D49BE1FB1488700BBEC33 /* Level01.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E5D49BD1FB1488700BBEC33 /* Level01.plist */; };
-		7ED8D0141FB44B8B001748D5 /* CollegeSurvivalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED8D0131FB44B8B001748D5 /* CollegeSurvivalTests.swift */; };
 		7EDAE3A61F9F02A70004AEDB /* PlatformNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDAE3A51F9F02A70004AEDB /* PlatformNode.swift */; };
 		7EDAE3A81F9F0D5D0004AEDB /* EssayPageNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDAE3A71F9F0D5D0004AEDB /* EssayPageNode.swift */; };
 		A0D857EA1F968E3400213B03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D857E91F968E3400213B03 /* AppDelegate.swift */; };
-		A0D857EC1F968E3400213B03 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A0D857EB1F968E3400213B03 /* GameScene.sks */; };
 		A0D857EE1F968E3400213B03 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A0D857ED1F968E3400213B03 /* Actions.sks */; };
 		A0D857F01F968E3400213B03 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D857EF1F968E3400213B03 /* GameScene.swift */; };
 		A0D857F21F968E3400213B03 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D857F11F968E3400213B03 /* GameViewController.swift */; };
@@ -27,7 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7ED8D0161FB44B8B001748D5 /* PBXContainerItemProxy */ = {
+		15F49AF31FB525D9007484BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A0D857DE1F968E3400213B03 /* Project object */;
 			proxyType = 1;
@@ -37,20 +37,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		156942911FB464750059FF82 /* EndGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGame.swift; sourceTree = "<group>"; };
+		15F49AEE1FB525D9007484BE /* College SurvivalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "College SurvivalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15F49AF01FB525D9007484BE /* College_SurvivalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = College_SurvivalTests.swift; sourceTree = "<group>"; };
+		15F49AF21FB525D9007484BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E23EEFE1F9EB46800092330 /* bkshlf_Backgrd1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkshlf_Backgrd1.png; sourceTree = "<group>"; };
 		7E23EEFF1F9EB46800092330 /* bkshlf_Backgrd_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkshlf_Backgrd_full.png; sourceTree = "<group>"; };
 		7E23EF021F9EC98400092330 /* GameElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameElements.swift; sourceTree = "<group>"; };
 		7E23EF041F9EE08500092330 /* GenericNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericNode.swift; sourceTree = "<group>"; };
 		7E5D49BB1FB143C300BBEC33 /* GameHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHandler.swift; sourceTree = "<group>"; };
 		7E5D49BD1FB1488700BBEC33 /* Level01.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level01.plist; sourceTree = "<group>"; };
-		7ED8D0111FB44B8B001748D5 /* CollegeSurvivalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollegeSurvivalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7ED8D0131FB44B8B001748D5 /* CollegeSurvivalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeSurvivalTests.swift; sourceTree = "<group>"; };
-		7ED8D0151FB44B8B001748D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EDAE3A51F9F02A70004AEDB /* PlatformNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformNode.swift; sourceTree = "<group>"; };
 		7EDAE3A71F9F0D5D0004AEDB /* EssayPageNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EssayPageNode.swift; sourceTree = "<group>"; };
 		A0D857E61F968E3400213B03 /* College Survival.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "College Survival.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D857E91F968E3400213B03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0D857EB1F968E3400213B03 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		A0D857ED1F968E3400213B03 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		A0D857EF1F968E3400213B03 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		A0D857F11F968E3400213B03 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7ED8D00E1FB44B8B001748D5 /* Frameworks */ = {
+		15F49AEB1FB525D9007484BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -78,29 +78,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15F49AEF1FB525D9007484BE /* College SurvivalTests */ = {
+			isa = PBXGroup;
+			children = (
+				15F49AF01FB525D9007484BE /* College_SurvivalTests.swift */,
+				15F49AF21FB525D9007484BE /* Info.plist */,
+			);
+			path = "College SurvivalTests";
+			sourceTree = "<group>";
+		};
 		7E23EEFD1F9EB46800092330 /* Background */ = {
 			isa = PBXGroup;
 			children = (
+				A0D857F61F968E3400213B03 /* Assets.xcassets */,
 				7E23EEFE1F9EB46800092330 /* bkshlf_Backgrd1.png */,
 				7E23EEFF1F9EB46800092330 /* bkshlf_Backgrd_full.png */,
 			);
 			path = Background;
 			sourceTree = "<group>";
 		};
-		7ED8D0121FB44B8B001748D5 /* CollegeSurvivalTests */ = {
-			isa = PBXGroup;
-			children = (
-				7ED8D0131FB44B8B001748D5 /* CollegeSurvivalTests.swift */,
-				7ED8D0151FB44B8B001748D5 /* Info.plist */,
-			);
-			path = CollegeSurvivalTests;
-			sourceTree = "<group>";
-		};
 		A0D857DD1F968E3400213B03 = {
 			isa = PBXGroup;
 			children = (
 				A0D857E81F968E3400213B03 /* College Survival */,
-				7ED8D0121FB44B8B001748D5 /* CollegeSurvivalTests */,
+				15F49AEF1FB525D9007484BE /* College SurvivalTests */,
 				A0D857E71F968E3400213B03 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				A0D857E61F968E3400213B03 /* College Survival.app */,
-				7ED8D0111FB44B8B001748D5 /* CollegeSurvivalTests.xctest */,
+				15F49AEE1FB525D9007484BE /* College SurvivalTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,7 +121,6 @@
 				7E23EEFD1F9EB46800092330 /* Background */,
 				A0D857E91F968E3400213B03 /* AppDelegate.swift */,
 				7E5D49BB1FB143C300BBEC33 /* GameHandler.swift */,
-				A0D857EB1F968E3400213B03 /* GameScene.sks */,
 				A0D857ED1F968E3400213B03 /* Actions.sks */,
 				A0D857EF1F968E3400213B03 /* GameScene.swift */,
 				7E23EF021F9EC98400092330 /* GameElements.swift */,
@@ -128,8 +128,8 @@
 				7E23EF041F9EE08500092330 /* GenericNode.swift */,
 				7EDAE3A51F9F02A70004AEDB /* PlatformNode.swift */,
 				A0D857F11F968E3400213B03 /* GameViewController.swift */,
+				156942911FB464750059FF82 /* EndGame.swift */,
 				A0D857F31F968E3400213B03 /* Main.storyboard */,
-				A0D857F61F968E3400213B03 /* Assets.xcassets */,
 				A0D857F81F968E3400213B03 /* LaunchScreen.storyboard */,
 				7E5D49BD1FB1488700BBEC33 /* Level01.plist */,
 				A0D857FB1F968E3400213B03 /* Info.plist */,
@@ -140,22 +140,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7ED8D0101FB44B8B001748D5 /* CollegeSurvivalTests */ = {
+		15F49AED1FB525D9007484BE /* College SurvivalTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7ED8D01A1FB44B8B001748D5 /* Build configuration list for PBXNativeTarget "CollegeSurvivalTests" */;
+			buildConfigurationList = 15F49AF51FB525D9007484BE /* Build configuration list for PBXNativeTarget "College SurvivalTests" */;
 			buildPhases = (
-				7ED8D00D1FB44B8B001748D5 /* Sources */,
-				7ED8D00E1FB44B8B001748D5 /* Frameworks */,
-				7ED8D00F1FB44B8B001748D5 /* Resources */,
+				15F49AEA1FB525D9007484BE /* Sources */,
+				15F49AEB1FB525D9007484BE /* Frameworks */,
+				15F49AEC1FB525D9007484BE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7ED8D0171FB44B8B001748D5 /* PBXTargetDependency */,
+				15F49AF41FB525D9007484BE /* PBXTargetDependency */,
 			);
-			name = CollegeSurvivalTests;
-			productName = CollegeSurvivalTests;
-			productReference = 7ED8D0111FB44B8B001748D5 /* CollegeSurvivalTests.xctest */;
+			name = "College SurvivalTests";
+			productName = "College SurvivalTests";
+			productReference = 15F49AEE1FB525D9007484BE /* College SurvivalTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		A0D857E51F968E3400213B03 /* College Survival */ = {
@@ -181,13 +181,12 @@
 		A0D857DE1F968E3400213B03 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "kenny ou";
 				TargetAttributes = {
-					7ED8D0101FB44B8B001748D5 = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = CGB3X4UE7E;
+					15F49AED1FB525D9007484BE = {
+						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A0D857E51F968E3400213B03;
 					};
@@ -212,13 +211,13 @@
 			projectRoot = "";
 			targets = (
 				A0D857E51F968E3400213B03 /* College Survival */,
-				7ED8D0101FB44B8B001748D5 /* CollegeSurvivalTests */,
+				15F49AED1FB525D9007484BE /* College SurvivalTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7ED8D00F1FB44B8B001748D5 /* Resources */ = {
+		15F49AEC1FB525D9007484BE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -233,7 +232,6 @@
 				7E23EF011F9EB46800092330 /* bkshlf_Backgrd_full.png in Resources */,
 				7E23EF001F9EB46800092330 /* bkshlf_Backgrd1.png in Resources */,
 				A0D857F51F968E3400213B03 /* Main.storyboard in Resources */,
-				A0D857EC1F968E3400213B03 /* GameScene.sks in Resources */,
 				A0D857F71F968E3400213B03 /* Assets.xcassets in Resources */,
 				A0D857FA1F968E3400213B03 /* LaunchScreen.storyboard in Resources */,
 				A0D857EE1F968E3400213B03 /* Actions.sks in Resources */,
@@ -243,11 +241,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7ED8D00D1FB44B8B001748D5 /* Sources */ = {
+		15F49AEA1FB525D9007484BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7ED8D0141FB44B8B001748D5 /* CollegeSurvivalTests.swift in Sources */,
+				15F49AF11FB525D9007484BE /* College_SurvivalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				156942921FB464750059FF82 /* EndGame.swift in Sources */,
 				7E23EF031F9EC98400092330 /* GameElements.swift in Sources */,
 				A0D857F01F968E3400213B03 /* GameScene.swift in Sources */,
 				A0D857F21F968E3400213B03 /* GameViewController.swift in Sources */,
@@ -269,10 +268,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7ED8D0171FB44B8B001748D5 /* PBXTargetDependency */ = {
+		15F49AF41FB525D9007484BE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A0D857E51F968E3400213B03 /* College Survival */;
-			targetProxy = 7ED8D0161FB44B8B001748D5 /* PBXContainerItemProxy */;
+			targetProxy = 15F49AF31FB525D9007484BE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -296,30 +295,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		7ED8D0181FB44B8B001748D5 /* Debug */ = {
+		15F49AF61FB525D9007484BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = CGB3X4UE7E;
-				INFOPLIST_FILE = CollegeSurvivalTests/Info.plist;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "College SurvivalTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SarahMai.CollegeSurvivalTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "College-Survival.College-SurvivalTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/College Survival.app/College Survival";
 			};
 			name = Debug;
 		};
-		7ED8D0191FB44B8B001748D5 /* Release */ = {
+		15F49AF71FB525D9007484BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = CGB3X4UE7E;
-				INFOPLIST_FILE = CollegeSurvivalTests/Info.plist;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "College SurvivalTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SarahMai.CollegeSurvivalTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "College-Survival.College-SurvivalTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/College Survival.app/College Survival";
 			};
 			name = Release;
@@ -446,13 +469,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7ED8D01A1FB44B8B001748D5 /* Build configuration list for PBXNativeTarget "CollegeSurvivalTests" */ = {
+		15F49AF51FB525D9007484BE /* Build configuration list for PBXNativeTarget "College SurvivalTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7ED8D0181FB44B8B001748D5 /* Debug */,
-				7ED8D0191FB44B8B001748D5 /* Release */,
+				15F49AF61FB525D9007484BE /* Debug */,
+				15F49AF71FB525D9007484BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0D857E11F968E3400213B03 /* Build configuration list for PBXProject "College Survival" */ = {
 			isa = XCConfigurationList;

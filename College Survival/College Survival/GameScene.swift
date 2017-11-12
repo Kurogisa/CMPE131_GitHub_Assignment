@@ -7,35 +7,32 @@
 //
 
 import SpriteKit
-import GameplayKit
 import CoreMotion
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
-
+class GameScene: SKScene, SKPhysicsContactDelegate
+{
     var background:SKNode!
-    var midground:SKNode!
+    //var midground:SKNode!
     var foreground:SKNode!
-    
     var hud:SKNode!
-    
     var player:SKNode!
     
     var scaleFactor:CGFloat!
     
-    var startButton = SKSpriteNode(imageNamed: "level_icon")//game start button
-    var endofGamePosition = 0
+    let startButton = SKSpriteNode(imageNamed: "level_icon")
+    
+    var endLevelY = 0
     
     let motionManager = CMMotionManager()
-    
     var xAcceleration:CGFloat = 0.0
     
-    var scoreLabel:SKLabelNode!
-    var flowerLabel:SKLabelNode!
+    var scoreLabel: SKLabelNode!
+    var essayPageLabel: SKLabelNode!
     
-    var playersMaxY:Int!
+    var playersMaxY: Int!
     
     var gameOver = false
-    
+ 
     required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
@@ -46,123 +43,229 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         super.init(size: size)
         backgroundColor = SKColor.white
         
+        playersMaxY = 80
+        
+        GameHandler.sharedInstance.score = 0
+        gameOver = false
+        
         scaleFactor = self.size.width / 320
         
-        /*_________________starting to add after problem_(video = 1:03:30)_____________________*/
-        let levelData = GameHandler.sharedInstance.levelData
-        /*_________________starting to add after problem_(video = 1:03:30)_____________________*/
+        physicsWorld.gravity = CGVector(dx: 0, dy: -2)
+        physicsWorld.contactDelegate = self
         
-        
-        background = createBackground()
+        background = createBackgroundNode()
         addChild(background)
         
-        //our app does not have a mid ground
-        /*background = createMidground()
+        /*our app does not have a mid ground
+        midground = createMidground()
         addChild(midground)*/
         
         foreground = SKNode()
         addChild(foreground)
         
+        hud = SKNode()
+        addChild(hud)
+        
+        startButton.position = CGPoint(x: self.size.width / 2, y: 400)
+        hud.addChild(startButton)
+        
+        let essayPage = SKSpriteNode(imageNamed: "essayPg_obj1")
+        essayPage.position = CGPoint(x: 25, y: self.size.height - 30)
+        hud.addChild(essayPage)
+        
+        essayPageLabel = SKLabelNode(fontNamed: "ChalkBoardSE-Bold")
+        essayPageLabel.fontSize = 30
+        essayPageLabel.fontColor = SKColor.white
+        essayPageLabel.position = CGPoint(x: 50, y: self.size.height - 40)
+        essayPageLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        
+        essayPageLabel.text = String(format: "X %d", GameHandler.sharedInstance.essayPage)
+        hud.addChild(essayPageLabel)
+         
+        scoreLabel = SKLabelNode(fontNamed: "ChalkBoardSE-Bold")
+        scoreLabel.fontSize = 30
+        scoreLabel.fontColor = SKColor.white
+        scoreLabel.position = CGPoint(x: self.size.width - 20, y: self.size.height - 40)
+        scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.right
+         
+        scoreLabel.text = "0"
+        hud.addChild(scoreLabel)
+        
+        motionManager.accelerometerUpdateInterval = 0.2
+        
+        //**********************************************************************
+        /*
+        motionManager.startAccelerometerUpdates(to: OperationQueue.current!, withHandler:
+        {
+            (accelerometerData: CMAccelerometerData!, error: NSError!)-> Void in
+            //let accelerometerData = data
+            let acceleration = accelerometerData.acceleration
+            self.xAcceleration = (CGFloat(acceleration.x) * 0.75 + (self.xAcceleration * 0.25))
+        } as! CMAccelerometerHandler)
+        */
+        //**********************************************************************
+        
+ 
         //created our player
         player = createPlayer()
         foreground.addChild(player)
+
+        let levelPlist = Bundle.main.path(forResource: "Level01", ofType: "plist")
+        let levelData = NSDictionary(contentsOfFile: levelPlist!)!
         
-        /*_________________starting to add after problem_(video = 1:05:47)_____________________*/
-        //errased and replaced in (1:05:47)
-        //let platform = createPlatformAtPosition(position: CGPoint(x:160, y:320), ofType: PlatformType.normalBrick)
-        //foreground.addChild(platform)
+        endLevelY = (levelData["EndY"]! as AnyObject).integerValue!
+        
+        /*let platform = createPlatformAtPosition(position: CGPoint(x: 160, y: 320), ofType: PlatformType.normalBook)
+        foreground.addChild(platform)*/
+ 
         let platforms = levelData["Platforms"] as! NSDictionary
         let platformPatterns = platforms["Patterns"] as! NSDictionary
-        let platformPositions = platforms ["Position"] as! [NSDictionary]
+        let platformPositions = platforms["Positions"] as! [NSDictionary]
         
-        for platformPositions in platformPositions
+        for platformPosition in platformPositions
         {
-            let x = platformPosition["x"]?.floatValue
-            let y = PlatformPosition["y"]?.floatValue
+            let x = (platformPosition["x"] as AnyObject).floatValue
+            let y = (platformPosition["y"]as AnyObject).floatValue
             let pattern = platformPosition["pattern"] as! NSString
             
-            let platformPattern = platformPattern[pattern] as! [NSDictionary]
+            let platformPattern = platformPatterns[pattern] as! [NSDictionary]
             for platformPoint in platformPattern
             {
-                let xValue = platformPoint["x"]?.floatValue
-                let yValue = platformPoint["y"]?.floatValue
-                let type = PlatformType[rawValue: platformPoint["type"]!.integerValue]
-                let xPosition = CGFloat[xValue! + x!]
-                let yPosition = CGFloat[yValue! + y!]
+                let xValue = (platformPoint["x"] as AnyObject).floatValue
+                let yValue = (platformPoint["y"] as AnyObject).floatValue
+                let type = PlatformType(rawValue: (platformPoint["type"] as AnyObject).integerValue)
+                let xPosition = CGFloat(xValue! + x!)
+                let yPosition = CGFloat(yValue! + y!)
                 
-                let platformNode = createPlatformAtPosition(CGPoint(x: xPosition, y: yPosition),ofType: type!)
+                let platformNode = createPlatformAtPosition(position: CGPoint(x: xPosition, y: yPosition),ofType: type!)
                 foreground.addChild(platformNode)
             }
-            //go to video part (1:12:02) HERE!!!!!!!!!
         }
-        /*_________________starting to add after problem_(video = 1:05:47)_____________________*/
-
         
-        let EssayPage = createEssayPageAtPosition(position: CGPoint(x: 160, y: 220),ofType: EssayPageType.NormalEssayPage)
-        foreground.addChild(EssayPage)
+        /*let EssayPage = createEssayPageAtPosition(position: CGPoint(x: 160, y: 220)/*, ofType: EssayPageType.NormalEssayPage*/)
+        foreground.addChild(EssayPage)*/
+ 
+        let essayPages = levelData["Stars"] as! NSDictionary
+        let essayPagePatterns = essayPages["Patterns"] as! NSDictionary
+        let essayPagePositions = essayPages["Positions"] as! [NSDictionary]
         
-        physicsWorld.gravity = CGVector(dx: 0, dy: -2)
-        physicsWorld.contactDelegate = self
-        
-        /*_________________starting to add after problem_(video = 53:30)_______________________*/
-        motionManager.accelerometerUpdateInterval = 0.2
-        
-        //ERROR #2
-        motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.currentQueue())
+        for essayPagePosition in essayPagePositions
         {
-            (data: CMAccelerometerData?, error:NSError?)-> Void in
-            if let accelerometerData = Data
+            let x = (essayPagePosition["x"] as AnyObject).floatValue
+            let y = (essayPagePosition["y"] as AnyObject).floatValue
+            let pattern = essayPagePosition["pattern"] as! NSString
+            
+            let essayPagePattern = essayPagePatterns[pattern] as! [NSDictionary]
+            for essayPagePoint in essayPagePattern
             {
-                let acceleration = accelerometerData.acceleration
-                self.xAcceleration = (CGFloat(acceleration.x)*0.75 + (self.xAcceleration * 0.25))
+                let xValue = (essayPagePoint["x"] as AnyObject).floatValue
+                let yValue = (essayPagePoint["y"] as AnyObject).floatValue
+                //let type = EssayPageType(rawValue: (essayPagePoint["type"] as AnyObject).integerValue)
+                let xPosition = CGFloat(xValue! + x!)
+                let yPosition = CGFloat(yValue! + y!)
+                
+                let essayPageNode = createEssayPageAtPosition(position: CGPoint(x: xPosition, y: yPosition)/*,ofType: type!*/)
+                foreground.addChild(essayPageNode)
             }
         }
-        /*_________________starting to add after problem_(video = 53:30)_______________________*/
     }
-    
-    func didBeginConcat(contact:SKPhysicsContact)
-    {
-        var otherNode:SKNode!
-        
-        if contact.bodyA.node != player
-        {
-            otherNode = contact.bodyA.node
-        }
-        else
-        {
-            otherNode = contact.bodyB.node
-        }
-        (otherNode as! GenericNode).collisionWithPlayer(player: player)
-        
-    }
-    /*_________________starting to add after problem_(video = 55:48)_______________________*/
-    
-        override func didSimulatePhysics()
-        {
-            player.physicsBody?.velocity = CGVector(dx: xAcceleration * 400, dy: player.physicsBody!.velocity.dy)
-            if player.position.x < -20
-            {
-                player.position = CGPoint(x: self.size.width + 20, y: player.position.y)
-            }
-            else if (player.position.x > self.size.width + 20)
-            {
-                player.position = CGPoint (x: -20, y: player.position.y)
-            }
-        }
-    /*_________________starting to add after problem_(video = 55:48)_______________________*/
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
+        if player.physicsBody!.isDynamic
+        {
+            return
+        }
+        
+        startButton.removeFromParent()
         
         player.physicsBody?.isDynamic = true
-        
-        player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 40))
-
+    
+        player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 60))
     }
     
-        override func update(_ currentTime: TimeInterval)
+    func didBegin(_ contact: SKPhysicsContact)
     {
-        // Called before each frame is rendered
-    }
-}
+        var updateHUD = false
 
+        let whichNode = (contact.bodyA.node != player) ? contact.bodyA.node : contact.bodyB.node
+        let other = whichNode as! GenericNode
+        
+        updateHUD = other.collisionWithPlayer(player: player)
+        
+        if updateHUD
+        {
+            essayPageLabel.text = String(format: "X %d", GameHandler.sharedInstance.essayPage)
+            scoreLabel.text = String(format: "%d", GameHandler.sharedInstance.score)
+        }
+    }
+
+    override func update(_ currentTime: TimeInterval)
+    {
+        if gameOver
+        {
+            return
+        }
+        
+        if Int(player.position.y) > playersMaxY
+        {
+            GameHandler.sharedInstance.score += Int(player.position.y) - playersMaxY!
+            playersMaxY = Int(player.position.y)
+            scoreLabel.text = String(format: "%d", GameHandler.sharedInstance.score)
+        }
+            
+        foreground.enumerateChildNodes(withName: "PLATFORMNODE", using:
+        {
+            (node, stop) -> Void in
+            let platform = node as! PlatformNode
+            platform.shouldRemoveNode(playerY: self.player.position.y)
+        })
+            
+        foreground.enumerateChildNodes(withName: "ESSAYPAGENODE", using:
+        {
+            (node, stop) -> Void in
+            let essayPage = node as! EssayPageNode
+            essayPage.shouldRemoveNode(playerY: self.player.position.y)
+        })
+            
+        if player.position.y > 200
+        {
+            background.position = CGPoint(x: 0, y: -((player.position.y - 200)/10))
+            //midground.position = CGPoint(x: 0, y: -((player.position.y - 200)/4))
+            foreground.position = CGPoint(x: 0, y: -(player.position.y - 200))
+        }
+        
+        if Int(player.position.y) > endLevelY
+        {
+            endGame()
+        }
+            
+        if Int(player.position.y) < playersMaxY - 800
+        {
+            endGame()
+        }
+    }
+    
+    override func didSimulatePhysics()
+    {
+        player.physicsBody?.velocity = CGVector(dx: xAcceleration * 400, dy: player.physicsBody!.velocity.dy)
+        if player.position.x < -20
+        {
+            player.position = CGPoint(x: self.size.width + 20, y: player.position.y)
+        }
+        else if (player.position.x > self.size.width + 20)
+        {
+            player.position = CGPoint (x: -20, y: player.position.y)
+        }
+    }
+
+    func endGame()
+    {
+        gameOver = true
+        GameHandler.sharedInstance.saveGameStats()
+        
+        let transition = SKTransition.fade(withDuration: 0.5)
+        let endGameScene = EndGame(size: self.size)
+        self.view!.presentScene(endGameScene, transition: transition)
+    }
+ }

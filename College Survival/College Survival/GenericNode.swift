@@ -8,28 +8,36 @@
 
 import SpriteKit
 
-struct CollisionBitMask
+struct CollisionCategoryBitmask
 {
-    static let Player:UInt32 = 0x00
-    static let Flower:UInt32 = 0x01
-    static let Brick:UInt32 = 0x02
+    static let Player: UInt32 = 0x00
+    static let EssayPage: UInt32 = 0x01
+    static let Book: UInt32 = 0x02
 }
 
-enum PlatformType:Int
+/*If we have two types of essay pages
+enum EssayPageType:Int
 {
-    case normalBrick = 0
-    case breakableBrick = 1
+case NormalEssayPage = 0
+case SpecialEssayPage
+}*/
+
+enum PlatformType: Int
+{
+    case normalBook = 0
+    case breakableBook
 }
+
 class GenericNode: SKNode
 {
-    func collisionWithPlayer (player:SKNode)->Bool
+    func collisionWithPlayer (player: SKNode)->Bool
     {
-        return false //for now
+        return false
     }
     
-    func shouldRemoveNode (playerY:CGFloat)
+    func shouldRemoveNode (playerY: CGFloat)
     {
-        if playerY>self.position.y + 300
+        if playerY > self.position.y + 300
         {
             self.removeFromParent()
         }

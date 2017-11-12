@@ -8,21 +8,23 @@
 
 import SpriteKit
 
-enum EssayPageType:Int
-{
-    case NormalEssayPage = 0
-    case SpecialEssayPage = 1
-}
-
 class EssayPageNode: GenericNode
 {
-    var essayPageType:EssayPageType!
+    //var essayPageType: EssayPageType!
     
     override func collisionWithPlayer(player: SKNode) -> Bool
     {
-        player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 400)
+        player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 450)
         
         self.removeFromParent()
+        
+        GameHandler.sharedInstance.score += 20
+        //If we have two types of essayPages
+        //GameHandler.sharedInstances.score += (EssayPageType == essayPage.normalEssayPage ? 20 : 100)
+        
+        GameHandler.sharedInstance.essayPage += 1
+        //If we  have two types of essayPages
+        //GameHandler.sharedInstances.essayPage += (EssayPageType == essayPage.normalEssayPage ? 1 : 5)
         
         return true
     }
