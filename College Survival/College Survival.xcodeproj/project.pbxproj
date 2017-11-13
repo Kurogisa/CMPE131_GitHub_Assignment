@@ -192,7 +192,7 @@
 					};
 					A0D857E51F968E3400213B03 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 6WA6Y7KBQJ;
+						DevelopmentTeam = CGB3X4UE7E;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -444,7 +444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
+				DEVELOPMENT_TEAM = CGB3X4UE7E;
 				INFOPLIST_FILE = "College Survival/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xx.College-Survival";
@@ -457,7 +457,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
+				DEVELOPMENT_TEAM = CGB3X4UE7E;
 				INFOPLIST_FILE = "College Survival/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xx.College-Survival";

@@ -94,15 +94,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         motionManager.accelerometerUpdateInterval = 0.2
         
         //**********************************************************************
-        /*
+        
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!, withHandler:
         {
-            (accelerometerData: CMAccelerometerData!, error: NSError!)-> Void in
-            //let accelerometerData = data
+            (accelerometerData: CMAccelerometerData!, error: NSError!) in
             let acceleration = accelerometerData.acceleration
             self.xAcceleration = (CGFloat(acceleration.x) * 0.75 + (self.xAcceleration * 0.25))
         } as! CMAccelerometerHandler)
-        */
+        
         //**********************************************************************
         
  

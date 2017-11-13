@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
             endingLineNumber = "132"
-            landmarkName = "createEssayPageAtPosition(position:ofType:)"
+            landmarkName = "createEssayPageAtPosition(position:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -86,7 +86,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "College Survival/GameScene.swift"
@@ -102,7 +102,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "College Survival/GameScene.swift"
@@ -113,6 +113,70 @@
             endingLineNumber = "79"
             landmarkName = "init(size:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "College Survival/GameScene.swift"
+            timestampString = "532224338.666131"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "init(size:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "College Survival/GameScene.swift"
+            timestampString = "532252202.421339"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "init(size:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "College_Survival.GameScene.init (size : __C.CGSize) -&gt; College_Survival.GameScene"
+                  moduleName = "College Survival"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sarahmai/Documents/GitHub/CMPE131_GitHub_Assignment/CMPE131_GitHub_Assignment/College%20Survival/College%20Survival/GameScene.swift"
+                  timestampString = "532252202.433712"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "6020">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "College_Survival.GameScene.(init (size : __C.CGSize) -&gt; College_Survival.GameScene).(closure #1)"
+                  moduleName = "College Survival"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sarahmai/Documents/GitHub/CMPE131_GitHub_Assignment/CMPE131_GitHub_Assignment/College%20Survival/College%20Survival/GameScene.swift"
+                  timestampString = "532252202.437699"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "288">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
